@@ -3540,10 +3540,10 @@ class clemency_processor_t(idaapi.processor_t):
            elif top5 in clemency_processor_t.handlers5:
                clemency_processor_t.handlers5[top5](self, self.cmd, mcode)
            else:
-               print "unknown opcode at address 0x%x: 0x%x" % (cmd.ea, mcode)
+               print("unknown opcode at address 0x%x: 0x%x" % (cmd.ea, mcode))
                return 0
-        except BadMnemonic, e:
-           print "bad mnemonic: %s" % e.mnem
+        except BadMnemonic as e:
+           print("bad mnemonic: %s" % e.mnem)
            return 0
 
         # Return decoded instruction size or zero
